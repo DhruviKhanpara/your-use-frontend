@@ -6,46 +6,46 @@ This is a full-stack web application designed to improve productivity, manage pe
 
 ## 🚀 Features
 
-![Website](screenshots/Website.png)
-![Website](screenshots/Contact-page.png)
-![Website](screenshots/Footer.png)
-![Website](screenshots/Login-page.png)
-![Website](screenshots/Register-page.png)
+![Website](src/assets/screenshots/Website.png)
+![Contect Page](src/assets/screenshots/Contact-page.png)
+![Footer](screenshots/Footer.png)
+![Login page](src/assets/screenshots/Login-page.png)
+![Registeration page](src/assets/screenshots/Register-page.png)
 
 ### ✅ Task Management (To-Do List)
 - Create daily work plans with time-bound tasks.
 - Drag and drop to change task status between **Pending**, **Running**, and **Done**.
 
-![Website](screenshots/ToDo.png)
+![ToDo list](src/assets/screenshots/ToDo.png)
 
 ### 💰 Expense Management
 - Track your daily, weekly, or monthly expenses and savings.
 - Simple UI for adding and reviewing expenses.
 
-![Website](screenshots/Expense.png)
+![Expense list](src/assets/screenshots/Expense.png)
 
 ### 🤝 Bill Splitting
 - Split group expenses with friends, family, or colleagues.
 - Easy and transparent way to manage shared costs.
 
-![Website](screenshots/Group-list.png)
-![Website](screenshots/Group-member-list.png)
-![Website](screenshots/Create-Group.png)
-![Website](screenshots/Add-member-in-group.png)
-![Website](screenshots/Edit-group.png)
-![Website](screenshots/Split-page.png)
+![Group list](src/assets/screenshots/Group-list.png)
+![Group member list](src/assets/screenshots/Group-member-list.png)
+![Create Group](src/assets/screenshots/Create-Group.png)
+![Add member in group](src/assets/screenshots/Add-member-in-group.png)
+![Edit group](src/assets/screenshots/Edit-group.png)
+![Split page](src/assets/screenshots/Split-page.png)
 
 ### 🎮 Built-in Games
 - **Tic-Tac-Toe**
   - Play solo or with a friend.
 
-  ![Website](screenshots/Tic-Tac-Toe.png)
+  ![Tic-Tac-Toe](src/assets/screenshots/Tic-Tac-Toe.png)
 
 - **Memory Card Game**
   - One-player and two-player modes to test memory skills.
 
-  ![Website](screenshots/Memory-card-game.png)
-  ![Website](screenshots/Memory-card.png)
+  ![Memory card game](src/assets/screenshots/Memory-card-game.png)
+  ![Memory card](src/assets/screenshots/Memory-card.png)
 
 ---
 
