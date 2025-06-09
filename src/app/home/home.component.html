@@ -1,0 +1,288 @@
+<div class="main">
+    <div class="top" id="home">
+        <img src="../assets/images/home1.jpg" alt="Image for Todo">
+        <div class="heading top-left">
+            <h1>Organize your life by
+                <span><ngx-typed-js 
+                    [strings]="['finance','Work','Group Bill']" 
+                    [loop]='true' 
+                    [showCursor]="false"
+                    [typeSpeed]="80"
+                >
+                    manage <span class="typing"></span>
+                </ngx-typed-js></span>
+            </h1>
+            <p class="next">Management of the day and finance is very important and help you to reduce the stress of
+                work.</p>
+            <button class="bottom-right" routerLink="/entry/login/1" (click)="user === null ? loginwarn() : ''">Let Started!</button>
+        </div>
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="video-container">
+                <video src="../assets/images/v_todo.mp4" loop autoplay muted oncanplay="this.play()" onloadedmetadata="this.muted = true"></video>
+                <h3>Manage your day</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="video-container">
+                <video src="../assets/images/v_expenses.mp4" loop autoplay muted oncanplay="this.play()" onloadedmetadata="this.muted = true"></video>
+                <h3>Manage Expenses</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="video-container">
+                <video src="../assets/images/v_bill.mp4" loop autoplay muted oncanplay="this.play()" onloadedmetadata="this.muted = true"></video>
+                <h3>Divide bill easily</h3>
+            </div>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="text head">
+            <h2>This the path of Productive day</h2>
+            <p>Centralize your activities and free up more time to do meaningful work without any stress and start
+                enjoing your work.</p>
+        </div>
+        <div class="img center">
+            <img src="./assets/images/home2.png" height="200px" width="300px" alt="todo list">
+        </div>
+    </div>
+    <div class="info gole">
+        <div class="head center">
+            <h2>Benefits of Todo List</h2>
+        </div>
+        <div class="section">
+            <div class="one">
+                <div class="content">
+                    <img src="./assets/images/improve_mental_health.jpg" alt="Mental Health improvement" width="150px">
+                    <h5>Improve Mental Health</h5>
+                    <p>You have full planing of your day with tasks and time so mental load is decrease and make healthy
+                        your brain.</p>
+                </div>
+            </div>
+            <div class="two">
+                <div class="content">
+                    <img src="./assets/images/increatse_productivity.jpg" alt="Improve Productivity" width="120px">
+                    <h5>Make productive Day</h5>
+                    <p>You can easily indentify how much time you west and you can utilize that time in the important work and increase productivity.</p>
+                </div>
+            </div>
+            <div class="three">
+                <div class="content">
+                    <img src="./assets/images/task_management.jpg" alt="Task Management" width="120px">
+                    <h5>Manage Your Task</h5>
+                    <p>You can easily identify important and urgent tasks from your task list so, using that you can
+                        allocate time accordingly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="text head">
+            <h2>Let's start plan for future</h2>
+            <p>Make list of your use and invesment of your money for clear visiual of future finantial plan and improve
+                your spending from right time.</p>
+        </div>
+        <div class="img2">
+            <img src="./assets/images/home3.jpg" alt="todo list">
+        </div>
+    </div>
+    <hr style="margin: 0 80px;" class="break"/>
+    <div class="detail">
+        <div class="img1">
+            <img src="./assets/images/home4.jpg" alt="Expenses Management" class="img1">
+        </div>
+        <div class="text head">
+            <h2>Path of secure future plan</h2>
+            <p>Do work daily with proper planing and manage your finance effectivly. You can save your time and money
+                effectivly without burdon on the mind and so that you can over-come your stress.</p>
+        </div>
+    </div>
+    <div class="info gole">
+        <div class="head center">
+            <h2>Benefits of Expenses Management</h2>
+        </div>
+        <div class="section">
+            <div class="one">
+                <div class="content">
+                    <img src="./assets/images/gole_achivement.png" alt="Long-term gole achivement" width="150px">
+                    <h5>Help In achiving long-term gole</h5>
+                    <p>Finantial planing help you to achive your long term finantial gole like, buy the house, Saving
+                        for a child’s college education, etc.</p>
+                </div>
+            </div>
+            <div class="two">
+                <div class="content">
+                    <img src="./assets/images/retirement_fund.png" alt="Retirement Fund" width="150px">
+                    <h5>Helpful at Retirement time</h5>
+                    <p>In your retirement when you are not able to work then your this saving help you to pass your life
+                        peacefully and happily.</p>
+                </div>
+            </div>
+            <div class="three">
+                <div class="content">
+                    <img src="./assets/images/emergency_fund.png" alt="Emergeny Fund" width="120px">
+                    <h5>Helpful at Emergency time</h5>
+                    <p>If any emergency situation is occured then you feel like your saving is god for you for that
+                        time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail d2">
+        <div class="text head">
+            <h2>Let's enjoy without warring about bill spliting problem</h2>
+            <p>Create group with your friends and make a list of your contribution in perticular trip expenses and at last divide money between your friends just by one click.</p>
+            <p>Easy to use and feel free from your money distribution issues. You can get perfect, transparent, faultless bill for each person so all can feel satisfaction and no chance of creating calculation related fault.</p>
+        </div>
+        <div class="img2">
+            <img src="./assets/images/home5.jpg" alt="Group spending">
+        </div>
+    </div>
+    <div class="about" id="about">
+        <div class="head center" style="margin-top: 45px;">
+            <h2>Let Introduce to Our Rock Stars</h2>
+        </div>
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="./assets/images/p1.jpg" alt="Jane">
+                    <div class="container">
+                        <h2>Jane Doe</h2>
+                        <p class="title">CEO & Founder</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>jane@example.com</p>
+                        <p><button class="bottom-right btn-width center">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="./assets/images/p2.jpg" alt="Mike">
+                    <div class="container">
+                        <h2>Miky Ross</h2>
+                        <p class="title">Art Director</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>miky@example.com</p>
+                        <p><button class="bottom-right btn-width center">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <img src="./assets/images/p3.jpg" alt="John">
+                    <div class="container">
+                        <h2>Joly Doe</h2>
+                        <p class="title">Designer</p>
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <p>joly@example.com</p>
+                        <p><button class="bottom-right btn-width center">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inp-form" id="contact">
+        <div class="head center" style="margin-top: 45px;">
+            <h2>Contact Us</h2>
+            <p>Share your experience, suggesion or for inquery</p>
+        </div>
+        <div class="form">
+            <form [formGroup]="contect">
+                <label><span class="form-lable">First Name:</span><span style="color: red;">*</span></label>
+                <input type="text" placeholder="First Name" formControlName="fname"><br />
+                <div *ngIf="(f.fname?.invalid && (f.fname.dirty || f.fname.touched))"
+                    class="errorU">
+                    <div>
+                      Last name is required.
+                    </div>
+                </div>
+                <label><span class="form-lable">Last Name:</span><span style="color: red;">*</span></label>
+                <input type="text" placeholder="Last Name" formControlName="lname"><br />
+                <div *ngIf="(f.lname?.invalid && (f.lname.dirty || f.lname.touched))"
+                    class="errorU">
+                    <div>
+                      First name is required.
+                    </div>
+                </div>
+                <label><span class="form-lable">Email Id:</span><span style="color: red;">*</span></label>
+                <input type="email" placeholder="Email Id" formControlName="email"><br />
+                <div class="msg" *ngFor="let error of error_messages.email">
+                    <div *ngIf="(f.email?.hasError(error.type) && (f.email.dirty || f.email.touched))"
+                        class="errorU">
+                        <div>
+                          {{error.message}}
+                        </div>
+                    </div>
+                </div>
+                <label><span class="form-lable">Mobile no.:</span><span style="color: red;">*</span></label>
+                <input type="tel" placeholder="Mobile Number" formControlName="mobile"><br />
+                <div class="msg" *ngFor="let error of error_messages.mobile">
+                    <div *ngIf="(f.mobile?.hasError(error.type) && (f.mobile.dirty || f.mobile.touched))"
+                        class="errorU">
+                        <div>
+                          {{error.message}}
+                        </div>
+                    </div>
+                </div>
+                <label><span class="form-lable">Message:</span><span style="color: red;">*</span></label>
+                <textarea placeholder="Writing area" formControlName="msg"></textarea><br />
+                <div *ngIf="(f.msg?.invalid && (f.msg.dirty || f.msg.touched))"
+                    class="errorU">
+                    <div>
+                      Message is required.
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="bottom-right btn-width" [disabled]="contect.invalid">Let's Share</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="info1 gole">
+        <div class="head center">
+            <h2>Work with joy</h2>
+        </div>
+        <div class="center">
+            This platform porvide effective way and tool for manage your today and and your bugets for your future plan.
+            This will help you for organize your work and money so, in any situation you don't feel stress and leave
+            productive day and secure future. And all this do with joy.
+        </div>
+    </div>
+    <div class="footer">
+        <div class="list4"><a href="#home"><fa-icon title="Back to top" [icon]="iconback"></fa-icon></a></div>
+        <div class="up">
+            <div class="list1">
+                <div class="ftext">
+                    <h4>YourUse</h4>
+                    <p>Thank you to choose us to daily work with you, hope you all are setisfied with our service if any problem you face then please contect us and give us chance to being helpful for you.</p>
+                    <h4>Contact Us</h4>
+                    <p><fa-icon [icon]="iconcall"></fa-icon>&nbsp;&nbsp;+91 74896 54567 <br>
+                    <fa-icon [icon]="iconmail"></fa-icon>&nbsp;&nbsp;youruse123@gmail.com</p>
+                </div>
+            </div>
+            <ul class="list2">
+                <h4>Quick links</h4>
+                <li><a href="" [routerLink]="user == null ? ['/entry/login/1'] : ['work/todo']"><fa-icon [icon]="iconArrow"></fa-icon> Todo</a></li>
+                <li><a href="" [routerLink]="user == null ? ['/entry/login/2'] : ['work/budget']"><fa-icon [icon]="iconArrow"></fa-icon> Expenses</a></li>
+                <li><a href="" [routerLink]="user == null ? ['/entry/login/3'] : ['work/split/bill']"><fa-icon [icon]="iconArrow"></fa-icon> Group billing</a></li>
+                <li><a href=""><fa-icon [icon]="iconArrow"></fa-icon> Terms & conditions</a></li>
+                <li><a href=""><fa-icon [icon]="iconArrow"></fa-icon> Polices</a></li>
+                <li><a href=""><fa-icon [icon]="iconArrow"></fa-icon> Sitemap</a></li>
+                <li><a href="#contact"><fa-icon [icon]="iconArrow"></fa-icon> FAQ</a></li>
+            </ul>
+            <div class="list3">
+                <h4>Our Social media contact</h4>
+                <div class="icons">
+                    <a href="https://www.facebook.com/" target="_blank" title="Facebook"><img src="../assets/images/iconfb.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/accounts/login" target="_blank" title="Instagram"><img src="../assets/images/iconinsta.png" alt="Instagram"></a>
+                    <a href="https://twitter.com/i/flow/login" target="_blank" title="Twitter"><img src="../assets/images/icontwitter.png" alt="Twitter"></a>
+                    <a href="https://in.linkedin.com/" target="_blank" title="Linked in"><img src="../assets/images/iconlinkedin.png" alt="Linked in"></a>
+                    <a href="https://en.wikipedia.org/wiki/India" target="_blank" title="Google"><img src="../assets/images/icongoogle.png" alt="Google"></a>
+                </div>
+                <p>YOUR USE</p>
+            </div>
+        </div><hr>
+        <p>&copy; Your Copyright 2023 | All Rights Are Reserverd</p>
+    </div>
+</div>

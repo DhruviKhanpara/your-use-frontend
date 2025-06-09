@@ -1,0 +1,65 @@
+<div class="main">
+    <div class="heading">
+        <h1>Let's Check your Strategy
+            <form class="opt">
+                Your Player is:
+                <input type="radio" id="p1" value="p1" name="opti" checked (change)="changeplayer($event.target)"><label for="p1">player1</label>
+                &nbsp;
+                <input type="radio" id="p2" value="p2" name="opti" (change)="changeplayer($event.target)"><label for="p2">player2</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your Turn:
+                <input type="radio" id="t1" value="t1" name="turn" checked (change)="changeopt($event.target)"><label for="t1">1st</label>
+                &nbsp;
+                <input type="radio" id="t2" value="t2" name="turn" (change)="changeopt($event.target)"><label for="t2">2nd</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="a" value="auto" name="auto" (change)="auto($event.target)"><label for="a">Play With me :)</label>
+            </form>
+        </h1>
+    </div>
+    
+    <div class="mid">
+        <div class="player">
+            <h3 [ngClass]="{'turn' : xisNext && !winner && isDrow=='','noturn' : !xisNext || isDrow=='Drow' || winner}">Card for player1</h3>
+            <div class="cards">
+                <div [ngClass]="{'img' : xisNext && !winner && isDrow=='','disimg' : !xisNext || isDrow=='Drow' || winner}" *ngFor="let i of xcard">
+                    <img src="../assets/images/X.webp" alt="X card">
+                </div>
+            </div>
+        </div>
+        <div class="game-board">
+            <div 
+                class="box"
+                [ngClass]="{'winbox': winnerIndx.includes(i)}"
+                *ngFor="let item of squares; let i=index"
+                (click)="makeMove(i)"
+            >
+                <span style="display: none;">{{item}}</span>
+                <div *ngIf="item == 'O'">
+                    <img src="../assets/images/O.jpg" alt="O card" height="100px" width="100px">
+                </div>
+                <div *ngIf="item == 'X'">
+                    <img src="../assets/images/X.webp" alt="X card" height="100px" width="100px">
+                </div>
+            </div>
+        </div>
+        <div class="player">
+            <h3 [ngClass]="{'turn' : !xisNext && isDrow=='' && !winner,'noturn' : xisNext || isDrow=='Drow' || winner}">Card for player2</h3>
+            <div class="cards">
+                <div [ngClass]="{'disimg' : xisNext || isDrow=='Drow' || winner,'img' : !xisNext && !winner && isDrow==''}" *ngFor="let i of ocard">
+                    <img src="../assets/images/O.jpg" alt="O card">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="restart" *ngIf="autoplay == true && yourTurn == false && turn == 2 && btn == true">
+        <button class="btn" id="strt" (click)="automove()">Start</button>
+    </div>
+    <div class="result" *ngIf="isDrow=='Drow' || winner">
+        <h2 *ngIf="isDrow=='Drow'">The Game is Drow</h2>
+        <h2 *ngIf="winner=='X'">Player 1 is Win the Game</h2>
+        <h2 *ngIf="winner=='O'">Player 2 is Win the Game</h2>
+    </div>
+    <div class="restart" *ngIf="isDrow=='Drow' || winner">
+        <button class="btn" (click)="newGame()">Restart</button>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="inp-form">
+        <div class="heading center" style="margin-top: 45px;">
+            <h1>Add new Member</h1>
+        </div>
+        <div class="form">
+            <form [formGroup]="member">
+
+                <label class="form-lable">Group name:<span style="color: red;font-weight: bold;">*</span> </label>
+                <input type="text" placeholder="Group name" formControlName="gpname"><br />
+                <div *ngIf="(f.gpname?.invalid && (f.gpname.dirty || f.gpname.touched))" class="errorU">
+                    <div>
+                        Group name is required.
+                    </div>
+                </div>
+                <label class="form-lable">Member's Username:<span style="color: red;font-weight: bold;">*</span></label>
+                <input type="text" placeholder="Member1,member2,..." formControlName="personuname"><br />
+                <div *ngIf="(f.personuname?.invalid && (f.personuname.dirty || f.personuname.touched))" class="errorU">
+                    <div>
+                        Member's username is required.
+                    </div>
+                </div>
+                <div class="center"><button class="bottom-right" (click)="addmember()"
+                        [disabled]="member.invalid">Please give them entry</button></div>
+                <span style="margin-top: 10px;"><a routerLink="/work/split/bill">Back to Split bill home</a></span>
+            </form>
+        </div>
+    </div>
+</div>

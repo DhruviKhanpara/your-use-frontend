@@ -1,0 +1,78 @@
+<div class="main">
+    <div class="left">
+        <div class="heading">
+            <h2>Add new task</h2>
+        </div>
+        <hr />
+        <div class="form">
+            <form [formGroup]="insertTask">
+                Your Task:<span style="color: red;font-weight: bold;">*</span><br />
+                <input type="text" formControlName="task"><br />
+                <div *ngIf="(f.task?.invalid && (f.task.dirty || f.task.touched))" class="error">
+                    <div>
+                        Task is required.
+                    </div>
+                </div>
+                Required Time:<span style="color: red;font-weight: bold;">*</span><br />
+                <input type="number" formControlName="hour" placeholder="H">
+                <input type="number" formControlName="minute" placeholder="M">
+                <input type="number" formControlName="second" placeholder="S"><br />
+                <div *ngIf="(f.hour?.invalid && (f.hour.dirty || f.hour.touched)) || (f.minute?.invalid && (f.minute.dirty || f.minute.touched)) || (f.second?.invalid && (f.second.dirty || f.second.touched))"
+                    class="error">
+                    <div>
+                        Enter correct time.
+                    </div>
+                </div>
+                <div class="restart">
+                    <button class="btn" (click)="add()" [disabled]="insertTask.invalid">Add to List</button>
+                </div>
+            </form>
+        </div>
+        <p class="center" style="margin: 0;">You allocate total</p>
+        <p class="center" style="margin: 0;">
+            <span style="color: #49072c;font-weight: bold;">{{timeH}} : {{timeM}} : {{timeS}}</span> 
+            time<br/>
+            <span *ngIf="timeH<24 || (timeH==24 && timeM==0 && timeS==0)">of today</span> from this list
+        </p>
+    </div>
+    <div class="right">
+        <div class="heading">
+            <h1>Your Today's Plan</h1>
+        </div>
+        <div cdkDropListGroup class="mid">
+            <div class="todo">
+                <h5>Your Task For Tody</h5>
+                <hr />
+                <div cdkDropList [cdkDropListData]="findtask('todo')"
+                    [ngClass]="findtask('todo').length==0?'example-list':''" (cdkDropListDropped)="drop($event)">
+                    <div class="item" *ngFor="let item of findtask('todo')" cdkDrag>
+                        <span>{{item.task}} </span>
+                        <span class="fa" (click)="delete(item)"><fa-icon class="fa" [icon]="iconTrash"></fa-icon></span>
+                    </div>
+                </div>
+            </div>
+            <div class="inprocess">
+                <h5>In Process Work</h5>
+                <hr />
+                <div cdkDropList [cdkDropListData]="findtask('run')"
+                    [ngClass]="findtask('run').length==0?'example-list':''" (cdkDropListDropped)="drop($event)">
+                    <div class="item" *ngFor="let item of findtask('run')" cdkDrag>
+                        <span>{{item.task}} </span>
+                        <span class="fa" (click)="delete(item)"><fa-icon class="fa" [icon]="iconTrash"></fa-icon></span>
+                    </div>
+                </div>
+            </div>
+            <div class="complete">
+                <h5>Completed Work</h5>
+                <hr />
+                <div cdkDropList [cdkDropListData]="findtask('done')"
+                    [ngClass]="findtask('done').length==0?'example-list':''" (cdkDropListDropped)="drop($event)">
+                    <div class="item" *ngFor="let item of findtask('done')" cdkDrag>
+                        <span>{{item.task}} </span>
+                        <span class="fa" (click)="delete(item)"><fa-icon class="fa" [icon]="iconTrash"></fa-icon></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

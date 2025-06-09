@@ -1,0 +1,47 @@
+<div class="main">
+    <div class="inp-form">
+        <div class="heading center" style="margin-top: 45px;">
+            <h1>Login First</h1>
+        </div>
+        <div class="form">
+            <form [formGroup]="login">
+                <label class="form-lable">User Name:<span style="color: red;font-weight: bold;">*</span> </label>
+                    <input type="text" placeholder="Username" formControlName="username"><br />
+                    <div *ngIf="(f.username?.invalid && (f.username.dirty || f.username.touched))"
+                        class="errorU">
+                        <div>
+                          Username is required.
+                        </div>
+                    </div>
+                <label class="form-lable">Email id:<span style="color: red;font-weight: bold;">*</span> </label>
+                    <input type="email" placeholder="Email Id" formControlName="email"><br />
+                    <div class="msg" *ngFor="let error of error_messages.email">
+                        <div *ngIf="(f.email?.hasError(error.type) && (f.email.dirty || f.email.touched))"
+                            class="errorU">
+                            <div>
+                              {{error.message}}
+                            </div>
+                        </div>
+                    </div>
+                <label class="form-lable">Password:<span style="color: red;font-weight: bold;">*</span> </label>
+                <span class="passm">
+                    <input [type]="password" placeholder="Password" formControlName="password">
+                    <span class="passfa" style="margin-left: -30px;" (click)="passshow()">
+                        <fa-icon *ngIf="show == false" [icon]="iconshow"></fa-icon>
+                        <fa-icon *ngIf="show == true" [icon]="iconnot"></fa-icon>
+                    </span>
+                </span>
+                    <br />
+                    <div *ngIf="(f.password?.invalid && (f.password.dirty || f.password.touched))"
+                        class="errorU">
+                        <div>
+                          Password is required.
+                        </div>
+                    </div>
+                <div class="center"><button class="bottom-right" (click)="userlogin()" [disabled]="login.invalid">May I come In?</button></div>
+                <span style="margin-top: 10px;"><a routerLink="/entry/register/{{this.actrouter.snapshot.paramMap.get('from')}}">Don't have account? Register</a></span>
+                <span><a routerLink="/entry/forgot/{{this.actrouter.snapshot.paramMap.get('from')}}">Forgote Password??</a></span>
+            </form>
+        </div>
+    </div>
+</div>

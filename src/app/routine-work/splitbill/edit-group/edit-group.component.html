@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="inp-form">
+        <div class="heading center" style="margin-top: 45px;">
+            <h1>Edit Group</h1>
+        </div>
+        <div class="form">
+            <form [formGroup]="group">
+
+                <label class="form-lable">Group name:<span style="color: red;font-weight: bold;">*</span> </label>
+                <input type="text" placeholder="Group name" formControlName="name"><br />
+                <div *ngIf="(f.name?.invalid && (f.name.dirty || f.name.touched))" class="errorU">
+                    <div>
+                        Group name is required.
+                    </div>
+                </div>
+                <label class="form-lable">Group Discription:<span style="color: red;font-weight: bold;">*</span> </label>
+                <input type="text" placeholder="Group discription" formControlName="discription"><br />
+                <div *ngIf="(f.discription?.invalid && (f.discription.dirty || f.discription.touched))" class="errorU">
+                    <div>
+                        Group discription is required.
+                    </div>
+                </div>
+                <label class="form-lable">Member's Username:<span style="color: red;font-weight: bold;">*</span>
+                </label>
+                <input type="text" placeholder="Member1,member2,..." formControlName="members"><br />
+                <div *ngIf="(f.members?.invalid && (f.members.dirty || f.members.touched))" class="errorU">
+                    <div>
+                        Member's username is required.
+                    </div>
+                </div>
+                <div class="center"><button class="bottom-right" (click)="editGroup()"
+                        [disabled]="group.invalid">Please Change my group</button></div>
+                <span style="margin-top: 10px;"><a routerLink="/work/split/bill">Back to Split bill home</a></span>
+
+            </form>
+        </div>
+    </div>
+</div>

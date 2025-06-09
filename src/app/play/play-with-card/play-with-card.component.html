@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="heading">
+        <h1>Let's Check your Memory
+        <form class="opt">
+            <input type="checkbox" id="a" value="auto" name="auto" (click)="change($event.target)"><label for="a">Play With me :)</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span *ngIf="autoplay">Your Turn:
+            <input type="radio" id="t1" value="t1" name="turn" checked (change)="changeturn($event.target)"><label for="t1">1st</label>
+            &nbsp;
+            <input type="radio" id="t2" value="t2" name="turn" (change)="changeturn($event.target)"><label for="t2">2nd</label></span>
+        </form>
+    </h1>
+    </div>
+    <div class="mid">
+        <div class="cardBoard">
+            <div class="item" *ngFor="let val of cards;let i=index">
+                <div class="card" (click)="flip(i,val)">
+                    <div [ngClass]="!displayCard.includes(i) ? selectedCard.includes(i) ? 'back' : 'front' : 'back'">
+                        <img src="../assets/images/backCard.jpg" alt="Back Side of Card">
+                    </div>
+                    <div [ngClass]="!displayCard.includes(i) ? selectedCard.includes(i) ? 'front' : 'back' : 'front'">
+                        <img src="../assets/images/img{{val}}.jpg" alt="card image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="restart" *ngIf="autoplay == true && yourTurn == false">
+        <button class="btn" id="strt" (click)="automove()">Start</button>
+    </div>
+    <div class="result" *ngIf="displayCard.length==42 && autoplay == false">
+        <h2>congratulations, You won the Game in {{flipcount}} moves</h2>
+    </div>
+    <div class="result" *ngIf="displayCard.length==42 && autoplay == true">
+        <h2>You found {{mycount}} pair and your opponent found {{yourcount}} pair</h2>
+    </div>
+    <div class="restart" *ngIf="displayCard.length==42">
+        <button class="btn" (click)="newGame()">Restart</button>
+    </div>
+</div>

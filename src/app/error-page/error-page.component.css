@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Noto+Sans:ital,wght@1,900&display=swap');
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: default;
+    background-image: linear-gradient(to left, #ffcccc , white);
+}
+.content .msg h1{
+    margin: 0;
+    font-size: 10rem;
+    color: #49072c;
+    font-family: 'Caprasimo', cursive;
+}
+.content .msg h1 span:nth-child(1){
+    animation: err 1.5s infinite;
+    animation-delay: .5s;
+}
+.content .msg h1 span:nth-child(2){
+    animation: err 1.5s infinite;
+    animation-delay: 1s;
+}
+.content .msg h1 span:nth-child(3){
+    animation: err 1.5s infinite;
+    animation-delay: 1.5s;
+}
+.content .msg h1 span:nth-child(4){
+    animation: err 1.5s infinite;
+    animation-delay: 2s;
+}
+.content .msg h1 span:nth-child(5){
+    animation: err 1.5s infinite;
+    animation-delay: 2.5s;
+}
+@keyframes msg {
+}
+.content .err .top{
+    font-size: 2rem;
+    color: rgb(70, 70, 70);
+    text-align: center;
+}
+.content .err .top >span{
+    color: #49072c;
+    font-weight: 500;
+}
+@keyframes err {
+    0%{opacity: 1;}
+    50%{opacity: 0.7;}
+    100%{opacity: 1;}
+}
+.content .err span span{color: #fd84c1;}
+.restart{ text-align: center;}

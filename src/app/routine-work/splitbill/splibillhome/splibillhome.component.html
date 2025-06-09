@@ -1,0 +1,69 @@
+<div class="main">
+    <div class="heading">
+        <h1>Welcome for your group planning</h1>
+    </div>
+    <div class="opt">
+        <a routerLink="/work/split/createGroup">
+            <div class="one">
+                <span class="pluse">+</span>&nbsp;&nbsp;
+                <span class="text">Create Groups</span>
+            </div>
+        </a>
+        <a routerLink="/work/split/addmember">
+            <div class="two">
+                <span class="pluse">+</span>&nbsp;&nbsp;
+                <span class="text">Add members</span>
+            </div>
+        </a>
+    </div><br />
+    <div class="top" *ngIf="showmem == false">
+        <hr>
+        <h2 class="headcolor">Your Groups</h2>
+        <div class="groups">
+            <div class="group" *ngFor="let i of group">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <a routerLink="/work/split/group/{{i.gid}}">
+                <div class="head center">{{i.name}}</div>
+                <div class="center created">Created by: {{i.createBy}}</div>
+                </a>
+                <div class="icon">
+                    <fa-icon (click)="showmember(i.gid)" class="fa" [icon]="iconuser"></fa-icon>
+                    <a routerLink="/work/split/editGroup/{{i.gid}}"><fa-icon  class="fa" [icon]="iconedit"></fa-icon></a>
+                    <fa-icon (click)="showpopup(i.gid)" class="fa" [icon]="icondelete"></fa-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="members" *ngIf="showmem == true">
+        <div class="memlist">
+            <div class="first">
+                <fa-icon (click)="back()" class="fa" style="font-size: 25px;" [icon]="iconback"></fa-icon>
+                <h2>{{member[0].name}}</h2>
+            </div>
+            <div class="second">
+                <div *ngFor="let i of member[0].member">
+                    <div class="membercard">
+                        {{i}}<span class="break">&nbsp;&nbsp;</span>
+                        <span style="color: #6161617a;font-size: 12px;" *ngIf="member[0].createBy == i">Creater</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="popup" [class]="popup == true?'show':''">
+    <div class="popup-content">
+        <img src="/assets/images/delete.png" alt="Delete popup image">
+        <h2 style="color: #332727;">
+            Are you sure?
+        </h2>
+        <p>Once you delete you are not able to retrive data and you all conversasion of this group is deleted.</p>
+        <div class="actions">
+            <input type="submit" (click)="popup = false" value="Cancle">
+            <input type="submit" (click)="showpopup(0)" value="Delete">
+        </div>
+    </div>
+</div>

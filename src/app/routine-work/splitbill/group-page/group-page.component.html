@@ -1,0 +1,96 @@
+<div class="main">
+    <div class="head">
+        <div class="left">
+            <a routerLink="/work/split/bill"><fa-icon  style="font-size: 20px;" [icon]="iconback"></fa-icon></a>&nbsp;&nbsp;
+            <img src="../assets/images/group.png" alt="Group">
+            &nbsp;&nbsp;
+            <div style="color: #49072c;display: flex;flex-direction: column;">
+                {{groupdata[0].name}}
+                <div class="discription">{{groupdata[0].discription}}</div>
+            </div>
+        </div>
+        <div class="right">
+            <button (click)="split()" [disabled]="groupdata.length==1" [title]="groupdata.length==1?'You don\'t have any conversasion':''">
+                <span *ngIf="splitbill == false">Split Please</span>
+                <span *ngIf="splitbill == true">Back</span>
+            </button>
+        </div>
+    </div><hr style="margin: 10px 0;"/>
+    <div class="btnsplit right">
+        <button (click)="split()" [disabled]="groupdata.length==1" [title]="groupdata.length==1?'You don\'t have any conversasion':''">
+            <span *ngIf="splitbill == false">Split Please</span>
+            <span *ngIf="splitbill == true">Back</span>
+        </button>
+    </div>
+    <div class="bottom" *ngIf="splitbill == false">
+        <div class="send">
+            <form [formGroup]="spend">
+                <label class="form-lable">Cost:&nbsp;</label><br class="break"/>
+                <input class="inp1" type="number" placeholder="Cost" formControlName="cost">
+
+                <label class="form-lable">Description:&nbsp;</label><br class="break"/>
+                <input class="inp2" type="text" placeholder="Use for" formControlName="discription">
+
+                <button [ngClass]="style" (mousedown)="style = 'btn2'" (mouseup)="style = 'btn1'" (click)="addspend()"
+                    [disabled]="spend.invalid">
+                    <img src="../assets/images/send.png" alt="send">
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="mid">
+        <div class="body" *ngIf="splitbill == false">
+            <div *ngFor="let item of groupdata;let i = index">
+                <span class="msg" *ngIf="i!=0" [ngClass]="item.membr == data.user?'b1':'b2'">
+                    <span class="creater">{{item.membr}}</span>&nbsp;&nbsp;
+                    {{item.discription}} : {{item.cost}}&nbsp;&nbsp;
+                    <span class="fa" (click)="delete(item.lid)" *ngIf="item.membr == data.user"><fa-icon class="fa"
+                            [icon]="iconTrash"></fa-icon></span>
+                </span>
+            </div>
+        </div>
+        <div class="split" *ngIf="splitbill == true">
+            <div class="content">
+                <h2 class="center" style="color: #49072c;">{{groupdata[0].name}}</h2>
+                <div class="discription" style="text-align: center;">{{groupdata[0].discription}}</div>
+                <hr style="margin-top: 10px;">
+                <div>Total cost for this trip is: <span class="info ">{{totalmoney}} Rs.</span></div>
+                <div>Per Person spending is: <span class="info">{{perPersonMoney}} Rs.</span></div>
+                <div>Total member for this bill:
+                    <span class="info"> {{groupdata[0].member.length}} </span>
+                </div>
+                <span class="info1" style="color: #49072c;">
+                    (
+                    <span *ngFor="let i of groupdata[0].member;let idx=index">
+                        <span *ngIf="idx!=0">,</span>
+                        {{i}}
+                    </span>
+                    )
+                </span>
+                <div>Member spend total:</div>
+                <div class="info space">
+                    <table>
+                        <tr *ngFor="let i of groupdata[0].member;let idx=index;">
+                            <td>{{i}}</td>
+                            <td>: {{perPersonTotal[idx]}} Rs.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>Each member's account: <span class="info">Someone face {{-remaingMoney}} Rs. loss</span></div>
+                <div class="info space">
+                    <table>
+                        <tr *ngFor="let i of groupdata[0].member;let idx=index;">
+                            <td>{{i}}</td>
+                            <td>
+                                :
+                                <span *ngIf="personAccount[idx]>0">Give {{personAccount[idx]}}</span>
+                                <span *ngIf="personAccount[idx]<0">Take {{-personAccount[idx]}}</span>
+                                <span>Rs.</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

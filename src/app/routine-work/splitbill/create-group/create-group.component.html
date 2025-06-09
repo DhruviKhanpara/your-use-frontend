@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="inp-form">
+        <div class="heading center" style="margin-top: 45px;">
+            <h1>Create New Group</h1>
+        </div>
+        <div class="form">
+            <form [formGroup]="group">
+
+                <label class="form-lable">Group name:<span style="color: red;font-weight: bold;">*</span> </label>
+                <input type="text" placeholder="Group name" formControlName="name"><br />
+                <div *ngIf="(f.name?.invalid && (f.name.dirty || f.name.touched))" class="errorU">
+                    <div>
+                        Name of group is required.
+                    </div>
+                </div>
+                <label class="form-lable">Group Description:<span style="color: red;font-weight: bold;">*</span></label>
+                <input type="text" placeholder="Group Description" formControlName="gpdcr"><br />
+                <div *ngIf="(f.gpdcr?.invalid && (f.gpdcr.dirty || f.gpdcr.touched))" class="errorU">
+                    <div>
+                        Discription is required.
+                    </div>
+                </div>
+                <label class="form-lable">First member's username:<span
+                        style="color: red;font-weight: bold;">*</span></label>
+                <input type="text" placeholder="member1,member2,..." formControlName="membr"><br />
+                <div *ngIf="(f.membr?.invalid && (f.membr.dirty || f.membr.touched))" class="errorU">
+                    <div>
+                        Member is required.
+                    </div>
+                </div>
+                <div class="center"><button class="bottom-right" (click)="create()" [disabled]="group.invalid">Please
+                        create place</button></div>
+                <span style="margin-top: 10px;"><a routerLink="/work/split/bill">Back to Split bill home</a></span>
+
+            </form>
+        </div>
+    </div>
+</div>

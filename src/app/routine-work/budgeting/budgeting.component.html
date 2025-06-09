@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="heading">
+        <h1>Your Monthly Expenses</h1>
+    </div>
+    <button 
+        style="border: none;background: none;color: blue;" 
+        class="gLink"
+        (click)="showTog()"
+    >
+        <span *ngIf="!show">Show</span><span *ngIf="show">Hide</span> Graphs
+    </button>
+    <div [ngClass]="show?'graph':'g'">
+        <div id="chart1" class="chart"></div>
+        <div id="chart2" class="chart"></div>
+    </div>
+    <div class="mid" [ngClass]="show?'none':'mid'">
+        <div class="left">
+            <div class="form">
+                <h5>Note Your Spending</h5><hr/>
+                <form [formGroup]="insertSpend">
+                    Title<span style="color: red;font-weight: bold;">*</span><br/>
+                    <input type="text" formControlName="title"><br/>
+                    <div *ngIf="(f.title?.invalid && (f.title.dirty || f.title.touched))"
+                        class="error">
+                        <div>
+                            Title is required.
+                        </div>
+                    </div>
+                    How You Use it?<span style="color: red;font-weight: bold;">*</span><br/>
+                    <select formControlName="area">
+                        <option value="" selected>--Select Area of spending--</option>
+                        <option value="save">Save</option>
+                        <option value="expenses">Expenses</option>
+                        <option value="invesment">Invesment</option>
+                    </select><br/>
+                    <div *ngIf="(f.area?.invalid && (f.area.dirty || f.area.touched))"
+                        class="error">
+                        <div>
+                          Choose area, It's required.
+                        </div>
+                    </div>
+                    Money<span style="color: red;font-weight: bold;">*</span><br/>
+                    <input type="number" formControlName="money"><br/>
+                    <div *ngIf="(f.money?.invalid && (f.money.dirty || f.money.touched))"
+                        class="error">
+                        <div>
+                          Enter Money is required.
+                        </div>
+                    </div>
+                    <div class="restart">
+                        <button class="btn" (click)="add()" [disabled]="insertSpend.invalid">Add to List</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="history">
+            <h5>
+                <form>Your income is 
+                    <input type="number" id="earn" value="{{earning}}" (blur)="changeEarn($event.target)"> 
+                    <span style="font-size: 35px;font-weight: 100;">| </span> 
+                    Your Spending are...
+                </form>
+            </h5>
+            <hr/>
+            <div class="content">
+                <div class="item" *ngFor="let item of listData">
+                    {{item.title}} : {{item.money}} Rs.
+                    <span class="fa" (click)="delete(item)"><fa-icon class="fa" [icon]="iconTrash"></fa-icon></span>
+                </div>
+            </div>
+            <div class="total center">
+                You Spend Total : {{expenses + saveing + invesment}}
+            </div>
+        </div>
+    </div>
+</div>

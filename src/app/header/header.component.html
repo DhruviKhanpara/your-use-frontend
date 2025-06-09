@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <input type="checkbox" id="checkbox_toggle" />
+  <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+  <a class="active" href="#home">
+    <fa-icon [icon]="iconHome"></fa-icon>
+    Your Place
+  </a>
+  <a href="" routerLink="play/tictactoe">
+    <fa-icon class="fa" [icon]="iconGamepad"></fa-icon>
+    Tic Tac Toe
+  </a>
+  <a href="" routerLink="play/cardGame">
+    <fa-icon class="fa" [icon]="iconBrain"></fa-icon>
+    Memory Game
+  </a>
+  <a href="" [routerLink]="user == null ? ['entry/login/1'] : ['work/todo']" (click)="user === null ? loginwarn() : ''">
+    <fa-icon class="fa" [icon]="iconTodo"></fa-icon> 
+    Make ToDo
+  </a>
+  <a href="" [routerLink]="user == null ? ['entry/login/2'] : ['work/budget']" (click)="user === null ? loginwarn() : ''">
+    <fa-icon class="fa" [icon]="iconBadge"></fa-icon>
+    Expenses Plan
+  </a>
+  <a href="" [routerLink]="user == null ? ['entry/login/3'] : ['work/split/bill']" (click)="user === null ? loginwarn() : ''">
+    <fa-icon class="fa" [icon]="icongroupbill"></fa-icon>
+    Group Billing
+  </a>
+  <a href="#about" (click)="infomeet()">
+    <fa-icon class="fa" [icon]="iconAbout"></fa-icon>
+    About
+  </a>
+  <a href="#contact" (click)="infocon()">
+    <fa-icon class="fa" [icon]="iconPhone"></fa-icon>
+    Contact
+  </a>
+  <a href="" *ngIf="user == null" routerLink="entry/login/0">
+    <fa-icon class="fa" [icon]="iconLogin"></fa-icon>
+    Login
+  </a>
+  <a href="" *ngIf="user != null" (click)="logout()">
+    <fa-icon class="fa" [icon]="iconLogout"></fa-icon>
+    Logout
+  </a>
+</div>

@@ -1,0 +1,7 @@
+div.content {
+    margin-left: 200px;
+    margin-right: 0;
+}
+@media screen and (max-width: 1000px) {
+    div.content {margin-left: 0;}
+}

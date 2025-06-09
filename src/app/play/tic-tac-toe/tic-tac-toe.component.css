@@ -1,0 +1,109 @@
+.heading h1 .opt{
+    font-size: 12px;
+}
+.opt input[type=radio], .opt input[type=checkbox]{
+    accent-color: #af0964;
+}
+.player{
+    justify-content: center;
+}
+.player .noturn{
+    font-size: 30px;
+    text-align: center;
+    color: #af0964;
+    filter: opacity(50%);
+    margin-top: 0;
+}
+.player .turn{
+    font-size: 30px;
+    text-align: center;
+    color: #00c73c;
+    margin-top: 0;
+}
+.mid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-board {
+    display: grid;
+    margin: 0 150px 0 150px;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+}
+.box{
+    background: #aaaaaa67;
+    border: 3px double #5555555e;
+    display: flex;
+    border-radius: 8px;
+    margin: 2px;
+    align-items: center;
+    justify-content: center;
+    color: #AAA;
+}
+.winbox{
+    animation: win 1.5s infinite;
+}
+@keyframes win {
+    0% {
+      box-shadow: 0px 0px 20px #48abe0;
+    }
+    50% {
+      box-shadow: 0px 0px 20px blueviolet;
+    }
+    75% {
+      box-shadow: 0px 0px 20px rebeccapuprle;
+    }
+    100% {
+      box-shadow: 0px 0px 20px #48abe0;
+    }
+}
+.cards{
+    display: grid;
+    justify-content: center;
+}
+.img img, .disimg img{
+    height: 80px;
+    width: 80px;
+}
+.disimg img{
+    filter: opacity(50%);
+}
+.result h2{
+    margin: 0;
+    font-size: 30px;
+    font-family: cursive;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    animation: resultGlow 1s ease-in-out infinite alternate;
+}
+@keyframes resultGlow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+.restart {
+    margin-top: 20px;
+    text-align: center;
+}
+@media (max-width: 1160px) { 
+    .player .noturn, .player .turn{
+        font-size: 3vw;
+    }
+    .game-board {
+        margin: 0 5vw 0 5vw;
+        grid-template-rows: 15vw 15vw 15vw;
+        grid-template-columns: 15vw 15vw 15vw;
+    }
+    .img img, .disimg img{
+        height: 8vw;
+        width: 8vw;
+    }
+    .heading{
+        font-size: 2.5vw;
+    }
+}

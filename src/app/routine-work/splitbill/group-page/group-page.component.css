@@ -1,0 +1,170 @@
+.head{
+    padding: 20px 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.left img{ height: 40px;width: 40px;}
+.left, .right{ 
+    display: flex;
+    align-items: center;
+}
+.right button{
+    color: #49072c;
+    margin-right: 10px;
+    border: none;
+    height: 40px;
+    width: 120px;
+    background: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.right button:hover{
+    width: 118px;
+    height: 38px;
+}
+.bottom{ padding: 20px; }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] { -moz-appearance: textfield;}
+.send{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.send img{ animation: rotate 5s linear infinite; }
+.fa{ display: none;}
+.msg:hover .fa{ display: inline; }
+.fa:hover { animation: colorc 1s ease-in-out infinite; }
+@keyframes rotate {
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(45deg);}
+    50%{transform: rotate(90deg);}
+    75%{transform: rotate(45deg);}
+    100%{transform: rotate(0deg);}
+}
+.btn1 img{ height: 40px;width: 40px;}
+.btn2 img{ 
+    height: 35px;
+    width: 35px;
+    margin: 1px 5px 4px 0;
+}
+button:disabled{ cursor: not-allowed;}
+.form-lable{ padding-left: 30px;}
+form button{ border: none;background: transparent;padding-left: 30px;}
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.body .msg{
+    display: flex;
+    justify-content: center;
+    background: aliceblue;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 350px;
+    padding: 5px;
+    color: #49072c;
+    cursor: pointer;
+    margin: 5px;
+}
+.b1{border-radius: 25px 40px 0 25px;}
+.b2{border-radius: 40px 25px 25px 0;}
+.body .msg:hover{ transform: translateY(-2px);background: rgb(226, 242, 255);}
+.topright{
+    color: #49072c;
+    float: right;
+}
+.split{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    width: 670px;
+    background: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+.info{
+    color: #49072c;
+    font-weight: 500;
+    font-size: 20px;
+}
+.space{ margin-left: 50px;}
+.content:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 1px 1px #0000001c, 0 2px 2px #0000001c, 0 4px 4px #0000001c, 0 6px 8px #0000001c, 0 8px 16px #0000001c;
+}
+.btnsplit{display: none;}
+.creater{
+    color: rgba(94, 94, 94, 0.425);
+    font-size: 12px;
+}
+.discription{
+    color: rgb(83, 83, 83);
+    font-size: 12px;
+}
+.break{ display: none;}
+@media (max-width:704px) {
+    .form-lable{ font-size: 2.5vw;}
+    form button, .form-lable{ padding-left: 4vw;}
+    .btn1 img{ height: 6vw;width: 6vw;}
+    .btn2 img{ height: 5vw;width: 5vw;margin: 0.5vw 0 0.5vw 1vw;}
+    .inp1{width: 80px;}
+    .bottom{padding: 20px 0;}
+    .content{width: 95vw;}
+    .info{font-size: 2.84vw;}
+}
+@media (max-width:560px) {
+    .form-lable{ font-size: 3vw;}
+    form button, .form-lable{ padding-left: 3.5vw;}
+    input{height: 5.4vw;}
+    .inp2{ width: 184px;}
+    .info{font-size: 3.5vw;}
+}
+@media (max-width:460px) {
+    .break{display: inline;}
+    .form-lable{ font-size: 3.8vw;}
+    input{height: 30px;}
+    .inp2{width: 70vw;}
+    .btn1 img{ height: 7.5vw;width: 7.5vw;}
+    .btn2 img{ height: 7vw;width: 7vw;margin: 0 0 0 0.5vw;}
+    form button, .form-lable{ padding-left: 3.5vw;}
+    .info{font-size: 4.5vw;}
+}
+@media (max-width:388px) {
+    .form-lable{ font-size: 5vw;}
+    .btn1 img{ height: 9.5vw;width: 9.5vw;}
+    .btn2 img{ height: 9vw;width: 9vw;margin: 0.5vw 0 0 0.5vw;}
+    .body .msg{width: 90vw;}
+    .right{display: none;}
+    .btnsplit{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width:340px) {
+    .info{font-size: 5.5vw;}
+    .content{font-size: 5vw;}
+}
+@media (max-width:265px) {
+    .form-lable{ font-size: 7vw;}
+    .btn1 img{ height: 11.5vw;width: 11.5vw;}
+    .btn2 img{ height: 11vw;width: 11vw;margin: 0.5vw 0 0 0.5vw;}
+    .content{font-size: 6vw;}
+    .info,.info1{
+        margin: 0 0 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 6.4vw;
+        text-align: center;
+    }
+}

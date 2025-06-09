@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,600&display=swap');
+html, body { height: 100%;cursor: default; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.main{height: 100%;}
+
+.heading {
+    color: #49072c;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+.heading h1 {
+    margin: 28px;
+}
+.btn {
+    width: 130px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    border: 1px solid #fd84c1;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+}
+.btn:hover {
+    background-color: #fd84c1;
+    box-shadow: 0px 15px 20px #fd84c170;
+    color: #fff;
+    transform: translateY(-2px);
+}
+.btn:disabled {
+    border: 1px solid #444444;
+    cursor: default;
+}
+.center {
+    text-align: center;
+}
+/* For input form */
+.inp-form {
+    padding-top: 10px;
+}
+.inp-form form {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.inp-form input {
+    width: 40vw;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #352123;
+}
+.inp-form textarea {
+    border-radius: 5px;
+    border: 1px solid #352123;
+    height: 100px;
+    /* margin: 1px; */
+}
+.inp-form input:hover,
+.inp-form textarea:hover,
+.inp-form input:focus,
+.inp-form textarea:focus {
+    /* margin: 0; */
+    background: #57393b00;
+    border: 2px solid #352123;
+}
+.form-lable {
+    font-size: 18px;
+    font-weight: bold;
+    color: #352123;
+}
+.fa {
+    color: #49072c;
+}
+.passfa fa-icon{
+    display: none;
+}
+.passm:hover .passfa fa-icon{
+    display: inline;
+}
+@keyframes colorc {
+    0% { color: #df1190; }
+    25% { color: #af0e71; }
+    50% { color: #810752; }
+    75% { color: #530435; }
+    100% { color: #b80d76; }
+}
+/* css for error message when enter wrong input */
+.errorU{
+    border-radius: 5px;
+    background: #fd84844b;
+    padding: 5px;
+    font-size: 16px;
+    width: 40vw;
+    height: 35px;
+    margin: -25px 0 10px 0;
+}
+@media (max-width:900px) {
+    .errorU{
+        width: 60vw;
+    }
+}
+@media (max-width:500px) {
+    .errorU{
+        width: 85vw;
+    }
+}
+/* for form submit button and below link text */
+.bottom-right {
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    background: transparent;
+    border: 1px solid #352123;
+    font-weight: bold;
+    color: #352123;
+    transition: all 0.4s ease 0s;
+}
+.bottom-right:disabled{
+    color: #745e61;
+    border: 1px solid #745e61;
+    cursor: not-allowed;
+}
+.bottom-right:hover {
+    background-color: #352123;
+    color: white;
+    border: none;
+}
+.form a{
+    text-decoration: none;
+    color: #745e61;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.form a:hover{
+    color: #352123;
+}
+@media (max-width:900px) {
+    .form input{
+        width: 60vw;
+    }
+}
+@media (max-width:500px) {
+    .form input{
+        width: 85vw;
+    }
+}
