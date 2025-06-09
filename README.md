@@ -87,6 +87,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Backend is connection
+## 🚀 Backend is connection
 
 Get backend from GIT and after setup to your system just run the node project. In this JSON file is use for data storing so no need any DB configuration. (`nodemon` -> for run node backend)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/DhruviKhanpara/your-use-backend.git
+cd project-name
+```
