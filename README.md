@@ -8,7 +8,7 @@ This is a full-stack web application designed to improve productivity, manage pe
 
 ![Website](src/assets/screenshots/Website.png)
 ![Contect Page](src/assets/screenshots/Contact-page.png)
-![Footer](screenshots/Footer.png)
+![Footer](src/assets/screenshots/Footer.png)
 ![Login page](src/assets/screenshots/Login-page.png)
 ![Registeration page](src/assets/screenshots/Register-page.png)
 
